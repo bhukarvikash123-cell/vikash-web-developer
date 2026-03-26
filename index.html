@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikash Bhukar | Premium Web Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --accent: #3b82f6;
+            --accent-dark: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo { font-weight: 700; font-size: 1.4rem; color: var(--dark); }
+        .logo span { color: var(--accent); }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .section { padding: 100px 10%; text-align: center; }
+        
+        .section-tag {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.03);
+            text-align: left;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border-color: var(--accent);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- PRICING --- */
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .popular {
+            background: var(--dark);
+            color: white;
+            transform: scale(1.05);
+        }
+        .popular .price-tag, .popular h3 { color: white; }
+        .popular p { color: #94a3b8; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 10% 40px;
+            text-align: center;
+        }
+
+        .footer-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        
+        .contact-pill {
+            background: rgba(255,255,255,0.05);
+            padding: 10px 20px;
+            border-radius: 100px;
+            display: inline-block;
+            margin: 10px;
+            color: #cbd5e1;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .popular { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Vikash<span>Bhukar.</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span class="section-tag">High-End Web Development</span>
+        <h1>I build websites that <br><span style="color: var(--accent);">scale businesses.</span></h1>
+        <p>Expert web solutions for lawyers, startups, and established enterprises. Modern, fast, and SEO-optimized.</p>
+        <a href="https://wa.me/917849939650" class="btn btn-primary">Start Your Project</a>
+    </section>
+
+    <section id="services" class="section">
+        <span class="section-tag">What I Offer</span>
+        <h2>Premium Digital Services</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="icon">⚖️</span>
+                <h3>Legal Portfolio</h3>
+                <p>High-authority websites designed specifically for advocates and law firms.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🚀</span>
+                <h3>Corporate Business</h3>
+                <p>Clean, minimal, and fast-loading websites for maximum professionalism.</p>
+            </div>
+            <div class="card">
+                <h3>🛒 E-commerce</h3>
+                <p>Advanced online stores with seamless payment and inventory management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section" style="background: #f1f5f9;">
+        <span class="section-tag">Investment</span>
+        <h2>Clear & Simple Pricing</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Essential</h3>
+                <span class="price-tag">₹1,999</span>
+                <p>Single Page • Responsive • WhatsApp Integration • Hosting Setup</p>
+            </div>
+            <div class="card popular">
+                <h3>Pro Strategy</h3>
+                <span class="price-tag">₹3,999</span>
+                <p>5 Pages • Advanced SEO • Google Maps • Premium Design</p>
+            </div>
+            <div class="card">
+                <h3>Ultimate</h3>
+                <span class="price-tag">₹6,999</span>
+                <p>Unlimited Pages • E-commerce Ready • Speed Optimization • 1 Year Support</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <span class="section-tag" style="color: var(--accent);">Ready to grow?</span>
+            <h2>Let’s build something <br>extraordinary.</h2>
+            <div style="margin-top: 40px;">
+                <a href="tel:7849939650" class="contact-pill">📞 +91 78499 39650</a>
+                <a href="mailto:bhukarvikash123@gmail.com" class="contact-pill">✉️ Send Email</a>
+            </div>
+            <a href="https://wa.me/917849939650" class="btn btn-primary" style="margin-top: 40px;">WhatsApp Me Now</a>
+            <p style="margin-top: 60px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 Vikash Bhukar. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
